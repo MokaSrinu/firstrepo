@@ -7,27 +7,76 @@
           width:40%;
           height:400px;
           margin:auto;
+          display:flex;
+          flex-direction:column;
           margin-top:50px;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
           background-image: url("https://www.teahub.io/photos/full/25-256949_indian-wedding-wallpapers-data-src-full-1316663-indian.jpg");
           background-size:100% ;
       }
+      #container>div{
+          display:flex;
+          justify-content:space-around;
+      }
       body>h1{
           color:crimson;
           font-family:arial;
           text-align:center;
-         
-
+      }
+      body>div>div>div{
+          margin-top:40px;
+          display:flex
       }
       body{
-          background-color:aquamarine;
+          background-color:cornflowerblue;
+      }
+      #button1{
+          margin-top:30px;
       }
     </style>
 </head>
 <body>
     <h1>Marriage-Age-Validator</h1>
     <div id="container"> 
-
+        <div>
+            <div>
+                <p>gender:</p>
+                <select name="gender" id="gender">
+                    <option value="--">--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                 </select>
+            </div>
+            <div>
+                <p>Year Of Birth:</p>
+                <input type="number" id="year" value="">
+            </div>  
+        </div>
+        <div id="button1">
+            <button onclick="validityofage()">submit</button>
+        </div>
     </div>
 </body>
+<script>
+     function validityofage(){
+         var gender1=document.getElementById("gender").value;
+         var year1=document.getElementById("year").value;
+         console.log(gender1,year1);
+         if(gender1=="Male"){
+             var res=2022-year1;
+             if(res>=21){
+                 alert("valid age to marry")
+             }else{
+                 alert("Not a valid age to marry");
+             }
+         }else{
+             var res=2022-year1;
+             if(res>=18){
+                 alert("valid age to marry")
+             }else{
+                 alert("Not a valid age to marry");
+             }
+         }    
+    }
+</script>
 </html>
